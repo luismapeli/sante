@@ -1,6 +1,6 @@
 
 $("#add_user").submit(function(event){
-    alert("Data Inserted Successfully!");
+    alert("Dados Inseridos com sucesso!");
 })
 
 $("#update_user").submit(function(event){
@@ -21,7 +21,7 @@ $("#update_user").submit(function(event){
     }
 
     $.ajax(request).done(function(response){
-        alert("Data Updated Successfully!");
+        alert("Dados Atualizados com sucesso!");
     })
 
 })
@@ -35,13 +35,11 @@ if(window.location.pathname == "/"){
             "url" : `http://localhost:3000/api/users/${id}`,
             "method" : "DELETE"
         }
-
-        if(confirm("Deseja deletar?")){
             $.ajax(request).done(function(response){
-                alert("Deletado!");
+                alert("Dados Deletados com Sucesso!");
                 location.reload();
             })
         }
 
-    })
+    )
 }

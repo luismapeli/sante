@@ -16,7 +16,7 @@
             <span class="text-light">Use esse formulario para atulaizar um cadastro</span>
         </div>
 
-        <!-- add user form -->
+        
          <!-- form handling -->
  <form method="POST" id="update_user">
     <div class="add_user">
@@ -69,15 +69,15 @@
                 <div class="form-group">
                  <label for="Teste" class="text-light">Sobre o Teste de Covid:</label>
                     <div class="radio inline">
-                        <input type="radio" id="radio-5" name="teste" value="Postivo"<%= user.teste == 'Positivo' ?'checked': '' %>>
+                        <input type="radio" id="radio-5" name="teste" value="Teste Postivo"<%= user.teste == 'Teste Positivo' ?'checked': '' %>>
                         <label for="radio-5" class="radio-label">Teste Positivo</label>
                     </div>
                     <div class="radio inline">
-                        <input type="radio" id="radio-6" name="teste" value="Negativo"<%= user.teste == 'Negativo' ?'checked': '' %>>
+                        <input type="radio" id="radio-6" name="teste" value="Teste Negativo"<%= user.teste == 'Teste Negativo' ?'checked': '' %>>
                         <label for="radio-6" class="radio-label">Teste Negativo</label>
                     </div>
                     <div class="radio inline">
-                        <input type="radio" id="radio-7" name="teste" value="Nunca"<%= user.teste == 'Nunca' ?'checked': '' %>>
+                        <input type="radio" id="radio-7" name="teste" value="Nunca Testou"<%= user.teste == 'Nunca Testou' ?'checked': '' %>>
                         <label for="radio-7" class="radio-label">Nunca Testou</label>
                     </div>
                     
@@ -109,7 +109,7 @@
                                        <label for="radio-12" class="radio-label">Sim</label>
                                    </div>
                                    <div class="radio inline">
-                                       <input type="radio" id="radio-13" name="mental" value="negativo"<%= user.mental == 'Não' ?'checked': '' %>>
+                                       <input type="radio" id="radio-13" name="mental" value="Não"<%= user.mental == 'Não' ?'checked': '' %>>
                                        <label for="radio-13" class="radio-label">Não</label>
                                    </div>
                                    <div class="form-group">
