@@ -1,0 +1,38 @@
+Imc:
+Sexo
+Idade
+Peso
+Altura
+
+
+Sintomas:
+Febre
+Tosse
+Nariz entupidos
+Dor de garganta
+Falta de ar
+Redução no olfato
+Redução no paladar 
+
+Social:
+Ficou em casa nos últimos 15 dias?
+Sai algumas vezes 
+Não sai 
+Sai todos os dias 
+
+Você já testou positivo pra covid?
+Sim, há mais de 14 dias 
+Sim, há menos de 14 dias 
+Não. 
+
+Alguém do seu círculo de contato social testou positivo para covid 19? 
+
+Você tem alguma doença crônica?
+Sim
+Não 
+
+Trabalha em alguma profissão de risco?
+Lixeiro
+Saúde
+Entregador
+Motorista

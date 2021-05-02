@@ -1,0 +1,23 @@
+<% for(var i = 0; i < users.length; i++) { %>
+<tr>
+    <td><%= i + 1 %></td>
+    <td><%= users[i].nome %></td>
+    <td><%= users[i].idade %></td>
+    <td><%= users[i].altura %></td>
+    <td><%= users[i].peso %></td>
+    <td><%= users[i].sexo %></td>
+    <td><%= users[i].sintomas %></td>
+    <td><%= users[i].teste %></td>
+    <td><%= users[i].cronico %></td>
+    <td><%= users[i].risco %></td>
+    <td><%= users[i].mental %></td>
+    <td>
+        <a href="/update-user?id=<%= users[i]._id %>" class="btn border-shadow update">   
+            <span class="text-gradient"><i class="fas fa-pencil-alt"></i></span>
+        </a>
+        <a class="btn border-shadow delete" data-id=<%= users[i]._id %>>   
+            <span class="text-gradient"><i class="fas fa-times"></i></span>
+        </a>
+    </td>
+</tr>
+<% } %>

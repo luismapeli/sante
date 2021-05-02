@@ -1,0 +1,129 @@
+
+<!-- include header -->
+<%- include('include/_header') %>
+<!-- /include header -->
+
+  <!-- Main Site -->
+  <main id="site-main">
+    <div class="container">
+        <div class="box-nav d-flex justify-between">
+           <div class="filter">
+               <a href="/"><i class="fas fa-angle-double-left"></i> Todos os Usuarios</a>
+           </div>
+        </div>
+        <div class="form-title text-center">
+            <h2 class="text-dark">Atualizar Usuario</h2>
+            <span class="text-light">Use esse formulario para atulaizar um cadastro</span>
+        </div>
+
+        <!-- add user form -->
+         <!-- form handling -->
+ <form method="POST" id="update_user">
+    <div class="add_user">
+        <div class="form-group">
+            <label for="nome" class="text-light">Nome:</label>
+            <input type="hidden" name="id" value="<%= user._id%>">
+            <input type="text" name="nome" value="<%= user.nome%>" placeholder= "Antonio Fagundes">
+        </div>
+        <div class="form-group">
+            <label for="idade" class="text-light">Idade:</label>
+            <input type="text" name="idade" value="<%= user.idade%>" placeholder= "21">
+        </div>
+        
+        <div class="form-group">
+            <label for="altura" class="text-light">Altura:</label>
+            <input type="text" name="altura" value="<%= user.altura%>" placeholder= "170">
+        </div>
+
+       
+        <div class="form-group">
+            <label for="peso" class="text-light">Peso:</label>
+            <input type="text" name="peso" value="<%= user.peso%>" placeholder= "65">
+        </div>
+
+
+        <div class="form-group">
+            <label for="sexo" class="text-light">Sexo:</label>
+            <div class="radio inline">
+                <input type="radio" id="radio-1" name="sexo" value="Masculino" <%= user.sexo == 'Masculino' ? 'checked' : '' %>>
+                <label for="radio-1" class="radio-label">Masclino</label>
+            </div>
+            <div class="radio inline">
+                <input type="radio" id="radio-2" name="sexo" value="Feminino"  <%= user.sexo == 'Feminino' ? 'checked' : '' %> >
+                <label for="radio-2" class="radio-label">Feminino</label>
+            </div>
+        </div>
+        
+            <div class="form-group">
+                <label for="sintomas" class="text-light">Tem Sintomas:</label>
+                <div class="radio inline">
+                    <input type="radio" id="radio-3" name="sintomas" value="Ativos"<%= user.sintomas == 'Ativos'?'checked':'' %>>
+                    <label for="radio-3" class="radio-label">Ativos</label>
+                </div>
+                <div class="radio inline">
+                    <input type="radio" id="radio-4" name="sintomas" value="Inativos"<%= user.sintomas == 'Inativos' ?'checked': '' %>>
+                    <label for="radio-4" class="radio-label">Inativos</label>
+                </div>
+
+                
+                <div class="form-group">
+                 <label for="Teste" class="text-light">Sobre o Teste de Covid:</label>
+                    <div class="radio inline">
+                        <input type="radio" id="radio-5" name="teste" value="Postivo"<%= user.teste == 'Positivo' ?'checked': '' %>>
+                        <label for="radio-5" class="radio-label">Teste Positivo</label>
+                    </div>
+                    <div class="radio inline">
+                        <input type="radio" id="radio-6" name="teste" value="Negativo"<%= user.teste == 'Negativo' ?'checked': '' %>>
+                        <label for="radio-6" class="radio-label">Teste Negativo</label>
+                    </div>
+                    <div class="radio inline">
+                        <input type="radio" id="radio-7" name="teste" value="Nunca"<%= user.teste == 'Nunca' ?'checked': '' %>>
+                        <label for="radio-7" class="radio-label">Nunca Testou</label>
+                    </div>
+                    
+                           <div class="form-group">
+                            <label for="cronico" class="text-light">É Doente Cronico?</label>
+                               <div class="radio inline">
+                                   <input type="radio" id="radio-8" name="cronico" value="Sim"<%= user.cronico == 'Sim' ?'checked': '' %>>
+                                   <label for="radio-8" class="radio-label">Sim</label>
+                               </div>
+                               <div class="radio inline">
+                                   <input type="radio" id="radio-9" name="cronico" value="Não"<%= user.cronico == 'Não' ?'checked': '' %>>
+                                   <label for="radio-9" class="radio-label">Não</label>
+                               </div>
+
+                           <div class="form-group">
+                            <label for="grupo" class="text-light">É do Grupo de Risco?</label>
+                               <div class="radio inline">
+                                   <input type="radio" id="radio-10" name="risco" value="Sim"<%= user.risco == 'Sim' ?'checked': '' %>>
+                                   <label for="radio-10" class="radio-label">Sim</label>
+                               </div>
+                               <div class="radio inline">
+                                   <input type="radio" id="radio-11" name="risco" value="Não"<%= user.risco == 'Não' ?'checked': '' %>>
+                                   <label for="radio-11" class="radio-label">Não</label>
+                               </div>
+                               <div class="form-group">
+                                <label for="mental" class="text-light">Se Sente Triste ou Ansioso?</label>
+                                   <div class="radio inline">
+                                       <input type="radio" id="radio-12"name="mental" value="Sim"<%= user.mental == 'Sim' ?'checked': '' %>>
+                                       <label for="radio-12" class="radio-label">Sim</label>
+                                   </div>
+                                   <div class="radio inline">
+                                       <input type="radio" id="radio-13" name="mental" value="negativo"<%= user.mental == 'Não' ?'checked': '' %>>
+                                       <label for="radio-13" class="radio-label">Não</label>
+                                   </div>
+                                   <div class="form-group">
+                                       <button type="submit" class="btn text-dark update">Salvar</button>
+                                   </div>
+            
+        </div>
+    </div>
+</form>
+       
+    </div>
+</main>
+<!-- /Main Site -->
+
+<!-- include footer -->
+<%- include('include/_footer') %>
+<!-- /include footer -->
