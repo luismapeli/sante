@@ -113,6 +113,10 @@
                                        <label for="radio-13" class="radio-label">Não</label>
                                    </div>
                                    <div class="form-group">
+                                    <label for="imc" class="text-light">IMC:</label>
+                                     <input type="text" name="imc" value="<%= parseFloat((user.peso/(user.altura*user.altura))*100).toFixed(2)%>" placeholder= "21">
+                                    </div>
+                                   <div class="form-group">
                                        <button type="submit" class="btn text-dark update">Salvar</button>
                                    </div>
             

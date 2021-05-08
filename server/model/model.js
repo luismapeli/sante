@@ -42,7 +42,12 @@ var Schema = new mongoose.Schema({
     mental: { 
         type: String,
         required: true
+    },
+    imc: { 
+        type: Number,
+        required: true
     }
+
 })
 
 const Userdb = mongoose.model('userdb', Schema);

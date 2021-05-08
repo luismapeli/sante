@@ -19,7 +19,10 @@ exports.create = (req,res)=>{
         teste:req.body.teste,
         cronico:req.body.cronico,
         risco:req.body.risco,
-        mental:req.body.mental
+        mental:req.body.mental,
+        // imc:req.body.imc,
+        // imc: Math.round((req.body.peso/(req.body.altura*req.body.altura))*100)
+        imc: parseFloat((req.body.peso/(req.body.altura*req.body.altura))*100).toFixed(2)
     })
 
     // Salvando Usuario no banco
@@ -70,7 +73,9 @@ exports.find = (req, res) => {
 
 //Atualiza um novo usuario pelo ID
 exports.update = (req, res) => {
-    if(!req.body){ 
+    console.log("passou aqui");
+    if(!req.body){
+        
         return res
         .status(400)
         .send({message:"Dados nao podem ser gravados vazios"})
@@ -88,6 +93,7 @@ exports.update = (req, res) => {
         .catch(err =>{
             res.status(500).send({message: "Erro na autalização de informaçãoes do usuario "})
         })
+
 }
 
 //Deleta um ususario pelo ID
