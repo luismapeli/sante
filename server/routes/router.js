@@ -21,6 +21,7 @@ route.get('/add-user', services.add_user)
  *  @method GET /update-user
  */
 route.get('/update-user', services.update_user)
+route.get('/show-user', services.show_user)
 
 
 // API

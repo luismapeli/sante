@@ -29,7 +29,7 @@ async function addStore(e) {
     }
 
     alert('Store added!');
-    window.location.href = '/localizacao.html';
+    window.location.href = `/map/localizacao.html`;
   } catch (err) {
     alert(err);
     return;

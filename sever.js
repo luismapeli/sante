@@ -8,7 +8,7 @@ const connectDB = require ('./server/database/connection');
 
 const app = express();
 
-dotenv.config({path: "./config/config.env"});
+dotenv.config({path: "config.env"});
 const PORT = process.env.PORT || 8080
 
 //log requests
@@ -39,4 +39,4 @@ app.use('/', require('./server/routes/router'))
 app.use('/api/v1/stores', require('./server/routes/stores'));
 
 
-app.listen(3000, ()=> {console.log('Servidor ON -  http://localhost:${PORT}')});
+app.listen(3000, ()=> {console.log(`Servidor ON -  http://localhost:${PORT}`)});
