@@ -39,4 +39,4 @@ app.use('/', require('./server/routes/router'))
 app.use('/api/v1/stores', require('./server/routes/stores'));
 
 
-app.listen(3000, ()=> {console.log(`Servidor ON -  http://localhost:${PORT}`)});
+app.listen(PORT, ()=> {console.log(`Servidor ON -  http://localhost:${PORT}`)});
