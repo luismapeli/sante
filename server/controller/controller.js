@@ -24,13 +24,20 @@ exports.create = (req,res)=>{
         // imc: Math.round((req.body.peso/(req.body.altura*req.body.altura))*100)
         imc: parseFloat((req.body.peso/(req.body.altura*req.body.altura))*100).toFixed(2)
     })
-
+    const teste = req.body.teste
+    console.log(teste);
+    const resultado = 'Teste Positivo'
     // Salvando Usuario no banco
     user
         .save(user)
         .then(data => {
             // res.send(data);
+            if(teste.toLowerCase() == resultado.toLowerCase()){
+                console.log("passou aqui")
+                res.redirect('/map/localizacao.html')
+            }else{
             res.redirect('/add-user')
+            } 
         })
         .catch(err =>{
             res.status(500).send({
