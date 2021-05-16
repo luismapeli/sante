@@ -26,20 +26,30 @@ exports.create = (req,res)=>{
     })
     const teste = req.body.teste
     const risco = req.body.risco
+    const sintomas = req.body.sintomas
+    const cronico = req.body.cronico
     console.log(teste);
     console.log(risco);
+    console.log(sintomas);
+    console.log(cronico);
     const resultado = 'Teste Positivo'
     const resultadorisco = 'Sim'
+    const resultadosintomas = 'Ativos'
+    const resultadocronico = 'Sim'
     // Salvando Usuario no banco
     user
         .save(user)
         .then(data => {
             // res.send(data);
-            if(teste.toLowerCase() == resultado.toLowerCase() || risco.toLowerCase() == resultadorisco.toLowerCase()){
-                console.log("passou aqui")
+            if(teste.toLowerCase() == resultado.toLowerCase() //resultado postivo
+            || cronico.toLowerCase() == resultadocronico.toLowerCase() && risco.toLowerCase() == resultadorisco.toLowerCase() //Cronico "Sim" e Grupo de risco "Sim"
+            || risco.toLowerCase() == resultadorisco.toLowerCase() && sintomas.toLowerCase() == resultadosintomas.toLowerCase() // Grupo de Risco"Sim" e Sintomas "Sim"
+            || cronico.toLowerCase() == resultadocronico.toLowerCase() && sintomas.toLowerCase() == resultadosintomas.toLowerCase()) //Cronico "Sim" e Sintomas "Sim"
+            {
+                console.log("Testando Condiçoes")
                 res.redirect('/recomendacoes/recomendacoes.html#')
             }else{
-            res.redirect('/map/localizacao.html')
+            res.redirect("/")
             } 
         })
         .catch(err =>{
