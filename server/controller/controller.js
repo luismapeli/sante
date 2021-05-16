@@ -36,7 +36,7 @@ exports.create = (req,res)=>{
                 console.log("passou aqui")
                 res.redirect('/map/localizacao.html')
             }else{
-            res.redirect('/add-user')
+            res.redirect('/recomendações/recomendações.html#')
             } 
         })
         .catch(err =>{
