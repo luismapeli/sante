@@ -25,18 +25,21 @@ exports.create = (req,res)=>{
         imc: parseFloat((req.body.peso/(req.body.altura*req.body.altura))*100).toFixed(2)
     })
     const teste = req.body.teste
+    const risco = req.body.risco
     console.log(teste);
+    console.log(risco);
     const resultado = 'Teste Positivo'
+    const resultadorisco = 'Sim'
     // Salvando Usuario no banco
     user
         .save(user)
         .then(data => {
             // res.send(data);
-            if(teste.toLowerCase() == resultado.toLowerCase()){
+            if(teste.toLowerCase() == resultado.toLowerCase() || risco.toLowerCase() == resultadorisco.toLowerCase()){
                 console.log("passou aqui")
-                res.redirect('/map/localizacao.html')
+                res.redirect('/recomendacoes/recomendacoes.html#')
             }else{
-            res.redirect('/recomendações/recomendações.html#')
+            res.redirect('/map/localizacao.html')
             } 
         })
         .catch(err =>{
@@ -45,7 +48,11 @@ exports.create = (req,res)=>{
             });
         });
 
+        
+
 }
+
+
 
 
 
