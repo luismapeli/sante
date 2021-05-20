@@ -22,9 +22,10 @@ async function getStores() {
           ]
         },
         properties: {
-          storeId: store.storeId,
-          icon: 'hospital',
-          description:`<strong>${store.storeId}</strong><p>EatBar (2761 Washington Boulevard Arlington VA) is throwing a <a href="http://tallulaeatbar.ticketleap.com/2012beachblanket/" target="_blank" title="Opens in a new window">Big Backyard Beach Bash and Wine Fest</a> on Saturday, serving up conch fritters, fish tacos and crab sliders, and Red Apron hot dogs. 12:00-3:00 p.m. $25.grill hot dogs.</p>`,
+          'storeId': store.storeId,
+          'icon': 'hospital',
+          'description':
+          `<strong>${store.storeId}</strong><p>${store.description}</p>`,
           
         }
       };
@@ -35,17 +36,19 @@ async function getStores() {
 // Load map with stores
 function loadMap(stores) {
     map.on('load', function() {
-      map.addLayer({
-        id: 'points',
-        type: 'symbol',
-        source: {
+      map.addSource('places', {
+      
           type: 'geojson',
           data: {
             type: 'FeatureCollection',
             features: stores,
             
           }
-        },
+        });
+        map.addLayer({
+          id: 'places',
+          type: 'symbol',
+          source: 'places',
         layout: {
           'icon-image': '{icon}-15',
           'icon-size': 1.5,
@@ -61,12 +64,12 @@ function loadMap(stores) {
         closeOnClick: false
        });
   
-       map.on('mouseenter', 'Point', function (e) {
+       map.on('mouseenter', 'places', function (e) {
         // Change the cursor style as a UI indicator.
         map.getCanvas().style.cursor = 'pointer';
   
-        var coordinates = e.features[1].geometry.coordinates.slice();
-        var description = e.features[1].properties.description;
+        var coordinates = e.features[0].geometry.coordinates.slice();
+        var description = e.features[0].properties.description;
   
         // Ensure that if the map is zoomed out such that multiple
         // copies of the feature are visible, the popup appears
