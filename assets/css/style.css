@@ -18,6 +18,14 @@ a {
     font-family: 'PT Sans', sans-serif;
 }
 
+body{
+    background: url('https://conceitosopticos.com.br/wp-content/uploads/2016/12/template-fundo-site-conseitos-opticos-4b.jpg') center center no-repeat fixed; 
+   -webkit-background-size: cover;
+   -moz-background-size: cover;
+   -o-background-size: cover;
+   background-size: cover;
+ }
+
 .container{
     max-width: 1400px;
     margin: auto;
@@ -88,6 +96,7 @@ a {
 table{
     border-spacing: 0px;
     width: 100%;
+    background-color: white;
 }
 
 .table td, .table th{
@@ -95,6 +104,7 @@ table{
     vertical-align: top;
     text-align: center;
     border-top: 1px solid var(--border);
+    /* background-color: white; */
 }
 
 .table td > a.btn{

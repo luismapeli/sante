@@ -1,24 +1,24 @@
-const storeForm = document.getElementById('store-form');
-const storeId = document.getElementById('store-id');
-const storeAddress = document.getElementById('store-address');
+const clinicaForm = document.getElementById('clinica-form');
+const clinicaId = document.getElementById('clinica-id');
+const clinicaAddress = document.getElementById('clinica-address');
 const description = document.getElementById('description');
 
-// Send POST to API to add store
-async function addStore(e) {
+// Send POST to API to add clinica
+async function addClinica(e) {
   e.preventDefault();
 
-  if (storeId.value === '' || storeAddress.value === '' || description.value === '') {
-    alert('Please fill in fields');
+  if (clinicaId.value === '' || clinicaAddress.value === '' || description.value === '') {
+    alert('Campo vazio');
   }
 
   const sendBody = {
-    storeId: storeId.value,
-    address: storeAddress.value,
+    clinicaId: clinicaId.value,
+    address: clinicaAddress.value,
     description: description.value
   };
 
   try {
-    const res = await fetch('/api/v1/stores', {
+    const res = await fetch('/api/v1/clinicas', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -27,10 +27,10 @@ async function addStore(e) {
     });
 
     if (res.status === 400) {
-      throw Error('Store already exists!');
+      throw Error('Clinica já cadastrada!');
     }
 
-    alert('Store added!');
+    alert('Clinica adicionada!');
     window.location.href = '/map/localizacao.html';
   } catch (err) {
     alert(err);
@@ -38,4 +38,4 @@ async function addStore(e) {
   }
 }
 
-storeForm.addEventListener('submit', addStore);
+clinicaForm.addEventListener('submit', addClinica);

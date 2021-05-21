@@ -36,7 +36,7 @@ app.use ('/js', express.static(path.resolve(__dirname, "assets/js")))
 
 //Carregando Routes
 app.use('/', require('./server/routes/router'))
-app.use('/api/v1/stores', require('./server/routes/stores'));
+app.use('/api/v1/clinicas', require('./server/routes/clinicas'));
 
 
 app.listen(PORT, ()=> {console.log(`Servidor ON -  http://localhost:${PORT}`)});

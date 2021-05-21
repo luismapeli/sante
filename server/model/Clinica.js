@@ -1,13 +1,13 @@
 const mongoose = require('mongoose');
 const geocoder = require('../../utils/geocoder');
 
-const StoreSchema = new mongoose.Schema({
-    storeId: {
+const ClinicaSchema = new mongoose.Schema({
+  clinicaId: {
         type: String,
-        required: [true, 'Please add a store ID'],
+        required: [true, 'Please add a clinica ID'],
         unique: true,
         trim: true,
-        maxlength: [10, 'Store ID must be less than 10 chars']
+        maxlength: [10, 'Clinica ID must be less than 10 chars']
       },
       description: {
         type: String,
@@ -35,7 +35,7 @@ const StoreSchema = new mongoose.Schema({
 });
 
 // Geocode & create location
-StoreSchema.pre('save', async function(next) {
+ClinicaSchema.pre('save', async function(next) {
     const loc = await geocoder.geocode(this.address);
     this.location = {
       type: 'Point',
@@ -48,4 +48,4 @@ StoreSchema.pre('save', async function(next) {
     next();
 });
 
-module.exports = mongoose.model('Store', StoreSchema);
+module.exports = mongoose.model('Clinica', ClinicaSchema);

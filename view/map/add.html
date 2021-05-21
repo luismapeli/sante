@@ -12,24 +12,42 @@
     />
 
     <title>Adicionar Clinica</title>
+    <style>
+       body{
+        background: url('https://conceitosopticos.com.br/wp-content/uploads/2016/12/template-fundo-site-conseitos-opticos-4b.jpg') center center no-repeat fixed; 
+         -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+         background-size: cover;
+       }
+    </style>
   </head>
   <body>
+    <header class="m-0 py-2" style="background-color: #06d6a0;">
+      <div class="row flex-nowrap justify-content-between align-items-center" >
+        
+        <div class="col-12 text-center">
+          <a href ="/" class="navbar-brand h1 fs-6 text-dark text-center">Sante</a>
+        </div>
+        
+      </div>
+    </header>
     <div class="container my-3">
       <h1 class="display-4 text-center">
         Add Clinica
       </h1>
 
-      <form id="store-form" class="mb-4">
+      <form id="clinica-form" class="mb-4">
         <div class="form-group">
-          <label for="store-id">Clinica ID</label>
-          <input type="text" id="store-id" class="form-control" />
+          <label for="clinica-id">Clinica ID</label>
+          <input type="text" id="clinica-id" class="form-control" />
         </div>
         <div class="form-group">
-          <label for="store-address">Endereço</label>
-          <input type="text" id="store-address" class="form-control" />
+          <label for="clinica-address">Endereço</label>
+          <input type="text" id="clinica-address" class="form-control" />
         </div>
         <div class="form-group">
-          <label for="store-address">Descrição</label>
+          <label for="clinica-address">Descrição</label>
           <input type="text" id="description" class="form-control" />
         </div>
         <button type="submit" class="btn btn-primary">Salvar</button>

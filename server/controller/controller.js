@@ -49,7 +49,7 @@ exports.create = (req,res)=>{
                 console.log("Testando Condiçoes")
                 res.redirect('/recomendacoes/recomendacoes.html')
             }else{
-            res.redirect("/")
+            res.redirect("/bem-estar/bem-estar.html")
             } 
         })
         .catch(err =>{
