@@ -38,10 +38,6 @@ app.use ('/js', express.static(path.resolve(__dirname, "assets/js")))
 app.use('/', require('./server/routes/router'))
 app.use('/api/v1/clinicas', require('./server/routes/clinicas'));
 app.use('/api/v1/clinicasP', require('./server/routes/clinicasP'));
-<<<<<<< HEAD
-
-=======
->>>>>>> 33464684e2bda646395dce8b5906df448d862c58
 
 app.listen(PORT, ()=> {console.log(`Servidor ON -  http://localhost:${PORT}`)});
 
