@@ -46,8 +46,12 @@ var Schema = new mongoose.Schema({
     imc: { 
         type: Number,
         required: true
+    },
+    criador: {
+        type: mongoose.Schema.Types.ObjectId, 
+        ref: "Usuario", 
+        required: true
     }
-   
 
 })
 

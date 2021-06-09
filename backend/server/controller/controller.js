@@ -20,9 +20,10 @@ exports.create = (req,res)=>{
         cronico:req.body.cronico,
         risco:req.body.risco,
         mental:req.body.mental,
-        imc: parseFloat((req.body.peso/(req.body.altura*req.body.altura))*100).toFixed(2)
+        imc: parseFloat((req.body.peso/(req.body.altura*req.body.altura))*100).toFixed(2),
+        criador: req.dadosUsuario.idUsuario
     })
-    
+
     user
         .save(user)
         .then(data => {
@@ -104,7 +105,8 @@ exports.update = (req, res) => {
         cronico:req.body.cronico,
         risco:req.body.risco,
         mental:req.body.mental,
-        imc: parseFloat((req.body.peso/(req.body.altura*req.body.altura))*100).toFixed(2)
+        imc: parseFloat((req.body.peso/(req.body.altura*req.body.altura))*100).toFixed(2),
+        criador: req.dadosUsuario.idUsuario
     };
     Userdb.findByIdAndUpdate(id, { $set: pac }, {useFindAndModify: false})
         .then(data=>{

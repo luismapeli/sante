@@ -5,6 +5,7 @@ const cors = require('cors');
 const bodyParser = require('body-parser')
 const path = require('path');
 const connectDB = require ('./server/database/connection');
+const usuarioRoutes = require ('./server/routes/usuarios');
 
 const app = express();
 
@@ -38,6 +39,7 @@ app.use ('/js', express.static(path.resolve(__dirname, "assets/js")))
 app.use('/', require('./server/routes/router'))
 app.use('/api/v1/clinicas', require('./server/routes/clinicas'));
 app.use('/api/v1/clinicasP', require('./server/routes/clinicasP'));
+app.use('/api/usuario', usuarioRoutes);
 
 app.listen(PORT, ()=> {console.log(`Servidor ON -  http://localhost:${PORT}`)});
 
