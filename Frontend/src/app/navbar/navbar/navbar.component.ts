@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Subscription } from 'rxjs';
+import { UsuarioService } from '../../auth/usuario.service';
+import { ToastrService } from 'ngx-toastr'
 
 @Component({
   selector: 'app-navbar',
@@ -6,10 +9,35 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent implements OnInit {
-
-  constructor() { }
+  private authObserver: Subscription;
+  public autenticado: boolean = false;
+  private userLogged: any;
+  constructor(private usuarioService: UsuarioService, private toastr: ToastrService) { }
 
   ngOnInit(): void {
+    this.autenticado = this.usuarioService.isAutenticado();
+    this.authObserver =
+    this.usuarioService.getStatusSubject().
+    subscribe((autenticado) => {
+    this.autenticado = autenticado;
+    this.getUserName();
+    })
   }
 
+  ngOnDestroy(){
+    this.authObserver.unsubscribe();
+  }
+
+  Logout(){
+    this.usuarioService.logout();
+    this.toastr.info("","Desconectado",{
+      timeOut: 1000,
+      progressBar: true
+    })
+  }
+
+  getUserName(){
+    this.userLogged = this.usuarioService.getName();
+    // console.log(this.userLogged);
+  }
 }

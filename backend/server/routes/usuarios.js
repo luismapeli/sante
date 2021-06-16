@@ -34,7 +34,9 @@ router.post('/login', (req, res, next) => {
       res.status(200).json({
         token: token,
         expiresIn: 3600,
-        idUsuario: user._id
+        idUsuario: user._id,
+        name: user.name,
+        code:200, mensagem: "Logado"
       });
     })
     .catch(err => {
@@ -58,7 +60,7 @@ router.post('/signup', (req, res, next) => {
     usuario.save()
     .then((result) => {
       res.status(201).json({
-        mensagem: "Ok",
+        mensagem: "Usuário criado",
         resultado: result
       })
     }).catch((err) => {
